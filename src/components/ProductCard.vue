@@ -4,10 +4,10 @@
       <img src="@/assets/dishes/d1.png" alt="" />
     </div>
     <div class="product_info">
-      <h6>{{ name }}</h6>
-      <p class="product_ingredients">{{ ingredients }}</p>
+      <h6>{{ dish.name }}</h6>
+      <p class="product_ingredients">{{ dish.ingredients }}</p>
       <div class="price">
-        <span class="total-price">${{ price }}</span>
+        <span class="total-price">${{ dish.price }}</span>
         <span class="old-price"></span>
       </div>
       <button class="add_btn">Add to cart</button>
@@ -20,13 +20,15 @@ export default {
   name: "ProductCard",
   data() {
     return {
-      name: "Pad Thai Classic",
-      ingredients:
-        "stir-fry dish made with rice noodles, shrimp, chicken, or tofu, peanuts,a scrambled egg and bean sprouts",
-      price: 50,
-      discount: 100,
+      // name: "Pad Thai Classic",
+      // ingredients:
+      //   "stir-fry dish made with rice noodles, shrimp, chicken, or tofu, peanuts,a scrambled egg and bean sprouts",
+      // price: 50,
+      // discount: 100,
+      dish: null,
     };
   },
+  props: ["id"],
 };
 </script>
 
