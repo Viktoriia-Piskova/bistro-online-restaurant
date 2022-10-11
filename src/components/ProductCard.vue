@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <div class="product_photo">
-      <img src="@/assets/pad-thai.png" alt="" />
+      <img src="@/assets/dishes/d1.png" alt="" />
     </div>
     <div class="product_info">
       <h6>{{ name }}</h6>

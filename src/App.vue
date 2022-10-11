@@ -14,15 +14,24 @@
       </ul>
       <ul class="user">
         <li>
-          <router-link to="/">Home</router-link>
+          <router-link to="/register">Register</router-link>
         </li>
         <li>Cart</li>
       </ul>
     </nav>
   </header>
   <router-view />
-  <SiteFooter></SiteFooter>
+  <SiteFooter />
 </template>
+
+<script>
+import SiteFooter from "@/components/SiteFooter.vue";
+export default {
+  components: {
+    SiteFooter,
+  },
+};
+</script>
 
 <style>
 #app {
