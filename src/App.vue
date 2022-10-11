@@ -1,9 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li>
+          <router-link to="/">Logo</router-link>
+        </li>
+        <li>
+          <router-link to="/">Order</router-link>
+        </li>
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+      </ul>
+      <ul class="user">
+        <li>
+          <router-link to="/">Home</router-link>
+        </li>
+        <li>Cart</li>
+      </ul>
+    </nav>
+  </header>
   <router-view />
+  <SiteFooter></SiteFooter>
 </template>
 
 <style>
@@ -12,19 +30,236 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+html {
+  scroll-behavior: smooth;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+body {
+  background: #3d4451;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
+body,
+body * {
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+  display: block;
+}
+
+li {
+  display: block;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 100px 10%;
+}
+
+.pink {
+  color: #f000b8;
+}
+
+h2 {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+h3 {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+}
+
+h6 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 28px;
+  margin: 10px 0px;
+}
+
+p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 10px 0px;
+  text-align: center;
+  color: #ffffff;
+}
+a {
+  text-decoration: none;
+  font-style: inherit;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Prompt";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+header * {
+  background: #2a2e37;
+  height: 100px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.user {
+  display: flex;
 }
 </style>
