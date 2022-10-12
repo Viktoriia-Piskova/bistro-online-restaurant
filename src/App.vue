@@ -16,7 +16,7 @@
         <li>
           <router-link to="/register">Profile</router-link>
         </li>
-        <li class="cart">Cart</li>
+        <li class="cart" @add_to_cart="addToCart">Cart {{ cart }}</li>
       </ul>
     </nav>
   </header>
@@ -27,6 +27,17 @@
 <script>
 import SiteFooter from "@/components/SiteFooter.vue";
 export default {
+  data() {
+    return {
+      cart: [],
+    };
+  },
+  methods: {
+    addToCart() {
+      this.cart.push(1);
+      console.log(this.cart);
+    },
+  },
   components: {
     SiteFooter,
   },

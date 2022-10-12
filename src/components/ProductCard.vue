@@ -10,7 +10,7 @@
         <span class="total-price">${{ dish.price }}</span>
         <span class="old-price"></span>
       </div>
-      <button class="add_btn">Add to cart</button>
+      <button class="add_btn" @click="addToCart">Add to cart</button>
     </div>
   </div>
 </template>
@@ -32,6 +32,11 @@ export default {
     dish: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    addToCart() {
+      this.$emit("add_to_cart");
     },
   },
 };
