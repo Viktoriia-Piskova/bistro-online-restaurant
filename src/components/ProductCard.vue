@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$emit("add_to_cart");
+      this.$store.dispatch("addToCart", this.dish);
     },
   },
 };

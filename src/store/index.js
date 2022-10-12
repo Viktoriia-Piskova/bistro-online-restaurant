@@ -1,9 +1,20 @@
 import { createStore } from "vuex";
 
 export default createStore({
-  state: {},
+  state: {
+    cart: [],
+  },
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    ADD_TO_CART(state, dish) {
+      state.cart.push(dish.id);
+      console.log(state.cart);
+    },
+  },
+  actions: {
+    addToCart({ commit }, dish) {
+      commit("ADD_TO_CART", dish);
+    },
+  },
   modules: {},
 });
