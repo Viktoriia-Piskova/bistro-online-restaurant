@@ -2,7 +2,7 @@
   <div class="home">
     <MainBanner></MainBanner>
     <h1>Order dishes now!</h1>
-    <ProductCard v-for="dish in dishes" :key="dish.id" />
+    <ProductCard v-for="dish in dishes" :key="dish.id" :dish="dish" />
   </div>
 </template>
 

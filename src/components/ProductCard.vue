@@ -25,10 +25,15 @@ export default {
       //   "stir-fry dish made with rice noodles, shrimp, chicken, or tofu, peanuts,a scrambled egg and bean sprouts",
       // price: 50,
       // discount: 100,
-      dish: null,
+      //dish: null,
     };
   },
-  props: ["id"],
+  props: {
+    dish: {
+      type: Object,
+      required: true,
+    },
+  },
 };
 </script>
 
