@@ -6,15 +6,15 @@
           <router-link to="/">Logo</router-link>
         </li>
         <li>
-          <router-link to="/">Order</router-link>
+          <router-link to="/">Delivery</router-link>
         </li>
         <li>
-          <router-link to="/">Home</router-link>
+          <router-link to="/restaurant">Restaurant</router-link>
         </li>
       </ul>
       <ul class="user">
         <li>
-          <router-link to="/register">Register</router-link>
+          <router-link to="/register">Profile</router-link>
         </li>
         <li class="cart">Cart</li>
       </ul>
@@ -204,11 +204,21 @@ section {
   color: #f000b8;
 }
 
+h1 {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  color: #ffffff;
+}
+
 h2 {
   font-family: "Playfair Display";
   font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
+  font-weight: 800;
+  font-size: 38px;
   line-height: 48px;
   text-align: center;
   margin: 20px 0px;
@@ -261,11 +271,6 @@ header nav {
 
 header {
   background: #2a2e37;
-  background: #2a2e37;
-  position: fixed;
-  top: 0px;
-  z-index: 9999;
-  width: 100%;
 }
 
 .menu li {

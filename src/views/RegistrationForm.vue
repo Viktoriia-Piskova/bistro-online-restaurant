@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .account {
   display: flex;
   align-items: stretch;
@@ -42,6 +42,9 @@ export default {
 .account-decor {
   width: 50%;
   overflow: hidden;
+}
+.account-header {
+  color: #2a2e37;
 }
 .account-decor img {
   height: 100%;
@@ -55,9 +58,7 @@ export default {
   align-items: center;
   justify-content: space-around;
 }
-.account-header {
-  color: #2a2e37;
-}
+
 .form input {
   background: #dde1cd;
   border-radius: 4px;
