@@ -16,7 +16,7 @@
         <li>
           <router-link to="/register">Register</router-link>
         </li>
-        <li>Cart</li>
+        <li class="cart">Cart</li>
       </ul>
     </nav>
   </header>
@@ -253,15 +253,31 @@ header nav {
   font-family: "Prompt";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 24px;
+  width: 80%;
+  margin: auto;
 }
 
-header * {
+header {
   background: #2a2e37;
-  height: 100px;
+  background: #2a2e37;
+  position: fixed;
+  top: 0px;
+  z-index: 9999;
+  width: 100%;
 }
 
+.menu li {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0px 20px;
+}
+
+.menu li:hover {
+  background-color: #3d4451;
+}
 .menu {
   display: flex;
   align-items: center;
@@ -270,5 +286,30 @@ header * {
 
 .user {
   display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.user li {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0px 20px;
+}
+
+.user li:hover {
+  background-color: #3d4451;
+}
+
+.products-wrapper {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 2%;
+}
+
+.cart {
+  background-color: #f000b8;
 }
 </style>

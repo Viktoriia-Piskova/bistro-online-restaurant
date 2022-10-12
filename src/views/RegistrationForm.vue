@@ -7,9 +7,7 @@
     <form class="form account-form" action="#">
       <h3 class="account-header">Create new account</h3>
       <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Second name" />
       <input type="email" placeholder="Email" />
-      <input type="date" />
       <input type="password" placeholder="Password" />
       <button class="sign-btn">Sign up</button>
       <p class="account-policy">
@@ -24,6 +22,14 @@
 <script>
 export default {
   name: "RegistrationForm",
+  data() {
+    return {
+      userId: 1,
+      name: "",
+      email: "",
+      password: "",
+    };
+  },
 };
 </script>
 
