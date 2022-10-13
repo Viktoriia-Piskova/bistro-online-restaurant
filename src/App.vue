@@ -17,7 +17,9 @@
           <router-link to="/register">Profile</router-link>
         </li>
         <li class="cart-link" @add_to_cart="addToCart">
-          <router-link to="/cart">Cart</router-link>
+          <router-link to="/cart"
+            >Cart {{ $store.state.cart.length }}</router-link
+          >
         </li>
       </ul>
     </nav>
@@ -33,12 +35,6 @@ export default {
     return {
       cart: [],
     };
-  },
-  methods: {
-    addToCart() {
-      this.cart.push(1);
-      console.log(this.cart);
-    },
   },
   components: {
     SiteFooter,

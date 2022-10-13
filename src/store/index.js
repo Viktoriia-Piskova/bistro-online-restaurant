@@ -7,7 +7,7 @@ export default createStore({
   getters: {},
   mutations: {
     ADD_TO_CART(state, dish) {
-      state.cart.push(dish.id);
+      state.cart.push(dish);
       console.log(state.cart);
     },
   },
