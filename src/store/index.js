@@ -5,6 +5,7 @@ export default createStore({
     cart: [],
     cardCost: 0,
     cardQuantity: 0,
+    userData: {},
   },
   getters: {},
   mutations: {
@@ -19,10 +20,20 @@ export default createStore({
       state.cardQuantity += 1;
       console.log(state.cart);
     },
+    ADD_USER(state, userData) {
+      state.userData = { ...userData };
+      console.log(state.userData);
+    },
   },
   actions: {
     addToCart({ commit }, dish) {
       commit("ADD_TO_CART", dish);
+    },
+    deleteFromCart({ commit }, dish) {
+      commit("ADD_TO_CART", dish);
+    },
+    addUser({ commit }, userData) {
+      commit("ADD_USER", userData);
     },
   },
   modules: {},

@@ -4,6 +4,7 @@
     <div v-if="orders.length === 0" class="cart-user empty-order">
       <h3>Your cart is empty</h3>
       <h3>Add something delisious</h3>
+      <button><router-link to="/">Delivery</router-link></button>
     </div>
     <div v-if="orders.length > 0">
       <div class="cart-items">

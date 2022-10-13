@@ -4,12 +4,12 @@
       <img src="@/assets/signup-decor.jpg" alt="" />
     </div>
 
-    <form class="form account-form" action="#">
+    <form @submit.prevent="addUser" class="form account-form" action="#">
       <h3 class="account-header">Create new account</h3>
-      <input type="text" placeholder="Name" />
+      <input v-model="userData.name" type="text" placeholder="Name" />
       <input type="email" placeholder="Email" />
       <input type="password" placeholder="Password" />
-      <button class="sign-btn">Sign up</button>
+      <button type="submit" class="sign-btn">Sign up</button>
       <p class="account-policy">
         <a href="https://en.wikipedia.org/wiki/Terms_of_service"
           >Terms of service</a
@@ -24,11 +24,17 @@ export default {
   name: "RegistrationForm",
   data() {
     return {
-      userId: 1,
-      name: "",
-      email: "",
-      password: "",
+      userData: {
+        name: "",
+        email: "",
+        password: "",
+      },
     };
+  },
+  methods: {
+    addUser() {
+      this.$store.dispatch("addUser", this.userData);
+    },
   },
 };
 </script>
