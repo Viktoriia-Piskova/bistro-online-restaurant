@@ -12,9 +12,9 @@
         </p>
       </div>
     </section>
-    <div class="products-wrapper">
+    <!-- <div class="products-wrapper">
       <ProductCard v-for="dish in dishes" :key="dish.id" :dish="dish" />
-    </div>
+    </div> -->
 
     <section class="extra">
       <div class="extra-description">
@@ -57,14 +57,13 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import ProductCard from "@/components/ProductCard.vue";
+//import ProductCard from "@/components/ProductCard.vue";
 import MainBanner from "@/components/MainBanner.vue";
 import DishesService from "@/services/DishesService.js";
 export default {
   name: "HomeView",
   components: {
-    ProductCard,
+    //ProductCard,
     MainBanner,
   },
   data() {

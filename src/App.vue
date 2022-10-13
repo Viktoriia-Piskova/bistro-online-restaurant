@@ -6,7 +6,7 @@
           <router-link to="/">Logo</router-link>
         </li>
         <li>
-          <router-link to="/">Delivery</router-link>
+          <router-link to="/delivery">Delivery</router-link>
         </li>
         <li>
           <router-link to="/restaurant">Restaurant</router-link>
@@ -14,7 +14,7 @@
       </ul>
       <ul class="user">
         <li>
-          <router-link to="/register">Profile</router-link>
+          <router-link to="/profile">Profile</router-link>
         </li>
         <li class="cart-link" @add_to_cart="addToCart">
           <router-link to="/cart"

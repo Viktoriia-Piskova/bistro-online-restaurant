@@ -1,10 +1,14 @@
 <template>
   <section class="cart">
-    <div class="cart-user"><h6>Hello user!</h6></div>
+    <div class="cart-user">
+      <h6>Hello, {{ userName || "dear" }}!</h6>
+    </div>
     <div v-if="orders.length === 0" class="cart-user empty-order">
       <h3>Your cart is empty</h3>
       <h3>Add something delisious</h3>
-      <button><router-link to="/">Delivery</router-link></button>
+      <button class="donate-btn">
+        <router-link to="/delivery">Delivery</router-link>
+      </button>
     </div>
     <div v-if="orders.length > 0">
       <div class="cart-items">
@@ -67,6 +71,7 @@ export default {
   data() {
     return {
       orders: this.$store.state.cart,
+      userName: this.$store.state.userData.name,
     };
   },
   created() {
