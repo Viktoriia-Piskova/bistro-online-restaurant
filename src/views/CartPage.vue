@@ -1,24 +1,24 @@
 <template>
   <section class="cart">
-    <div class="cart-user"><h3>Hello user! your items</h3></div>
+    <div class="cart-user"><h6>Hello user!</h6></div>
     <div v-if="orders.length === 0" class="cart-user empty-order">
       <h3>Your cart is empty</h3>
-      <p>Add something delisious</p>
+      <h3>Add something delisious</h3>
     </div>
     <div v-if="orders.length > 0">
       <div class="cart-items">
         <table>
           <tr v-for="order in orders" :key="order.id">
-            <td>1</td>
             <td>{{ order.name }}</td>
             <td>{{ order.price }}</td>
-            <td>356</td>
+            <td>{{ order.inCart }}</td>
+            <td>{{ order.inCart * order.price }}</td>
             <td><button class="cart-delete">X</button></td>
           </tr>
         </table>
       </div>
       <div class="cart-total">
-        <p>Total: 3479 sum</p>
+        <h2>Total: {{ $store.state.cardCost }} sum</h2>
       </div>
       <div class="cart-time">
         <form action="#">

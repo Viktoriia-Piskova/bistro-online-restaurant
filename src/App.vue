@@ -18,7 +18,7 @@
         </li>
         <li class="cart-link" @add_to_cart="addToCart">
           <router-link to="/cart"
-            >Cart {{ $store.state.cart.length }}</router-link
+            >Cart {{ $store.state.cardQuantity }}</router-link
           >
         </li>
       </ul>

@@ -3,11 +3,20 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     cart: [],
+    cardCost: 0,
+    cardQuantity: 0,
   },
   getters: {},
   mutations: {
     ADD_TO_CART(state, dish) {
-      state.cart.push(dish);
+      if (dish.inCart == undefined) {
+        dish.inCart = 1;
+        state.cart.push(dish);
+      } else {
+        dish.inCart += 1;
+      }
+      state.cardCost += dish.price * dish.inCart;
+      state.cardQuantity += 1;
       console.log(state.cart);
     },
   },
