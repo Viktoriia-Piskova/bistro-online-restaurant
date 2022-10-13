@@ -16,7 +16,9 @@
         <li>
           <router-link to="/register">Profile</router-link>
         </li>
-        <li class="cart" @add_to_cart="addToCart">Cart {{ cart }}</li>
+        <li class="cart-link" @add_to_cart="addToCart">
+          <router-link to="/cart">Cart</router-link>
+        </li>
       </ul>
     </nav>
   </header>
@@ -322,10 +324,12 @@ header {
   margin: auto;
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-row-gap: 2%;
+  justify-items: center;
+  align-items: center;
+  padding: 50px 0px;
 }
 
-.cart {
+.cart-link {
   background-color: #f000b8;
 }
 </style>

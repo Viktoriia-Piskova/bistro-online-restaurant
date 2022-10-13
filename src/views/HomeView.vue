@@ -26,7 +26,7 @@
         </p>
         <button class="donate-btn">Donate</button>
       </div>
-      <img src="@/assets/promo-burger.png" alt="" />
+      <img class="extra-image" src="@/assets/promo-burger.png" alt="" />
     </section>
 
     <section class="reviews">
@@ -99,8 +99,12 @@ export default {
 .extra {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #2a2e37;
+}
+.extra-image {
+  width: 500px;
+  height: auto;
 }
 .extra-description {
   display: flex;
