@@ -209,6 +209,13 @@ section {
   padding: 100px 10%;
 }
 
+button {
+  height: 40px;
+  transition: all 300ms;
+  font-size: 20px;
+  padding: 10px;
+}
+
 .pink {
   color: #f000b8;
 }
@@ -287,6 +294,20 @@ header {
   align-items: center;
   height: 100px;
   padding: 0px 20px;
+}
+
+.menu li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.user li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .menu li:hover {

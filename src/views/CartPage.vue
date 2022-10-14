@@ -1,7 +1,7 @@
 <template>
   <section class="cart">
     <div class="cart-user">
-      <h6>Hello, {{ userName || "dear" }}!</h6>
+      <h3>Hello, {{ userName || "dear" }}!</h3>
     </div>
     <div v-if="orders.length === 0" class="cart-user empty-order">
       <h3>Your cart is empty</h3>
@@ -11,34 +11,65 @@
       </button>
     </div>
     <div v-if="orders.length > 0">
-      <div class="cart-items">
-        <table>
-          <tr v-for="order in orders" :key="order.id">
-            <td>{{ order.name }}</td>
-            <td>{{ order.price }}</td>
-            <td>{{ order.inCart }}</td>
-            <td>{{ order.inCart * order.price }}</td>
-            <td><button class="cart-delete">X</button></td>
-          </tr>
-        </table>
-      </div>
-      <div class="cart-total">
-        <h2>Total: {{ $store.state.cardCost }} sum</h2>
-      </div>
-      <div class="cart-time">
-        <form action="#">
-          <select class="select-time" name="delivery-time" id="now">
-            <option value="nearest">nearest</option>
-            <option value="change-time">change time</option>
-          </select>
-        </form>
-      </div>
-      <div class="cart-payment">
-        <button class="payment google"></button>
-        <p>or ented card credentials</p>
-        <div class="pay-card">
-          <div class="card-wrapper">
-            <form class="card__form" action="">
+      <form action="" @submit.prevent="sendOrder">
+        <fieldset class="cart-items">
+          <legend>Your order</legend>
+          <table>
+            <tr v-for="order in orders" :key="order.id">
+              <td>{{ order.name }}</td>
+              <td>{{ order.price }}</td>
+              <td>{{ order.inCart }}</td>
+              <td>{{ order.inCart * order.price }}</td>
+              <td><button class="cart-delete">X</button></td>
+            </tr>
+            <tr>
+              <td colspan="6">
+                <h6>Total: {{ $store.state.cardCost }}</h6>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset class="cart-delivery">
+          <legend>Delivery time and address</legend>
+          <div class="select-time">
+            <label>Delivery time: <input type="time" value="13:00" /></label>
+          </div>
+          <div class="cart-address">
+            <label>
+              Street name
+              <input
+                type="text"
+                name="street"
+                id="street"
+                placeholder="Street name"
+                value="Test user name"
+              />
+            </label>
+            <label>
+              Number
+              <input
+                type="text"
+                class="input-small"
+                name="house"
+                placeholder="123a"
+            /></label>
+            <label
+              >Appartment<input
+                type="text"
+                class="input-small"
+                name="apartment"
+                placeholder="456"
+            /></label>
+          </div>
+        </fieldset>
+        <fieldset class="cart-payment">
+          <legend>Payment details</legend>
+          <button class="g-pay">
+            Pay with <span class="pink">G</span> pay
+          </button>
+          <p>or ented card credentials</p>
+          <div class="pay-card">
+            <div class="card-wrapper">
               <input type="text" placeholder="number" />
               <input type="text" placeholder="cardholder name" />
               <div class="card__expire">
@@ -56,11 +87,11 @@
                   <option value="2025">2025</option>
                 </select>
               </div>
-              <button class="submit-btn-active" type="submit">Confirm</button>
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
+        </fieldset>
+        <button type="submit" class="cart-confirm">Confirm order</button>
+      </form>
     </div>
   </section>
 </template>
@@ -76,6 +107,11 @@ export default {
   },
   created() {
     console.log(this.$store.state.cart);
+  },
+  methods: {
+    sendOrder() {
+      return;
+    },
   },
 };
 </script>
@@ -112,6 +148,25 @@ export default {
   font-size: 20px;
 }
 
+input {
+  color: #000;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+input[radio] {
+  height: 10px;
+  width: 10px;
+}
+
+select {
+  color: #000;
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
 select * {
   color: #000;
   font-size: 20px;
@@ -119,8 +174,84 @@ select * {
   margin: 10px;
 }
 
+.g-pay {
+  background-color: #000;
+  width: 500px;
+  margin: 10px;
+}
+
 .card-wrapper {
-  background-color: #793ef9;
+  background-color: #414f69;
   border-radius: 20px;
+  height: 287px;
+  width: 500px;
+  margin: auto;
+  box-shadow: #1a1818 3px 3px 5px;
+  padding: 15px;
+  display: grid;
+}
+
+.card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.card-submit {
+  background-color: #000;
+  margin: 20px auto;
+}
+
+.cart-confirm {
+  height: 50px;
+  width: 500px;
+  background-color: rgb(15, 95, 15);
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-confirm:hover,
+.cart-confirm:hover {
+  background-color: rgb(74, 209, 74);
+  margin: 20px auto;
+}
+legend {
+  font-size: 30px;
+  font-weight: 300;
+  color: #adaaad94;
+  text-transform: uppercase;
+}
+
+fieldset {
+  border: 2px solid #adaaad94;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.cart-address {
+  display: flex;
+}
+
+.input-small {
+  width: 100px;
+}
+
+label {
+  font-size: 20px;
+  font-size: 20px;
+  display: grid;
+  justify-items: baseline;
+}
+
+.g-pay:active,
+.g-pay:hover,
+.card-submit:active,
+.card-submit:hover {
+  background-color: #fff;
+  color: #000;
+  transition: all 500ms;
 }
 </style>
