@@ -7,7 +7,7 @@
     </div>
 
     <div class="copyright">
-      <div>Logo</div>
+      <div class="footer-logo"><img src="@/assets/logo.png" alt="logo" /></div>
       <p>
         Necessary, making this the first true generator on the Internet. It uses
         a dictionary of over 200 Latin words, combined with
@@ -49,5 +49,9 @@ footer {
 }
 .schedule {
   width: 10;
+}
+.footer-logo img {
+  height: 100px;
+  width: auto;
 }
 </style>

@@ -3,7 +3,9 @@
     <nav>
       <ul class="menu">
         <li>
-          <router-link to="/">Logo</router-link>
+          <router-link to="/"
+            ><img src="@/assets/logo.png" alt="logo"
+          /></router-link>
         </li>
         <li>
           <router-link to="/delivery">Delivery</router-link>

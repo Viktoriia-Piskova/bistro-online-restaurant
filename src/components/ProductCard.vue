@@ -1,5 +1,5 @@
 <template>
-  <router-link class="event-link" :to="{ name: 'ProductDetails' }">
+  <router-link :to="{ name: 'ProductDetails', params: { id: dish.id } }">
     <div class="product">
       <div class="product_photo">
         <img src="@/assets/dishes/d1.png" alt="" />
@@ -21,14 +21,7 @@
 export default {
   name: "ProductCard",
   data() {
-    return {
-      // name: "Pad Thai Classic",
-      // ingredients:
-      //   "stir-fry dish made with rice noodles, shrimp, chicken, or tofu, peanuts,a scrambled egg and bean sprouts",
-      // price: 50,
-      // discount: 100,
-      //dish: null,
-    };
+    return {};
   },
   props: {
     dish: {

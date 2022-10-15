@@ -1,5 +1,5 @@
 <template>
-  <div class="product">
+  <div v-if="dish" class="product">
     <div class="product_photo">
       <img src="@/assets/dishes/d1.png" alt="" />
     </div>
@@ -25,14 +25,14 @@
 import DishesService from "@/services/DishesService";
 export default {
   name: "ProductDetails",
+  props: ["id"],
   data() {
     return {
       dish: null,
-      id: "d02",
     };
   },
-  //props: ["id"],
   created() {
+    console.log(this.dish);
     DishesService.getDish(this.id)
       .then((response) => {
         this.dish = response.data;
