@@ -4,6 +4,7 @@ import DeliveryPage from "../views/DeliveryPage.vue";
 import UserProfile from "../views/UserProfile";
 import RestaurantReserve from "../views/RestaurantReserve.vue";
 import CartPage from "@/views/CartPage.vue";
+import ProductDetails from "../views/ProductDetails.vue";
 
 const routes = [
   {
@@ -30,6 +31,13 @@ const routes = [
     path: "/delivery",
     name: "delivery",
     component: DeliveryPage,
+  },
+
+  {
+    path: "/dishes/d01",
+    name: "ProductDetails",
+    component: ProductDetails,
+    props: true,
   },
 ];
 

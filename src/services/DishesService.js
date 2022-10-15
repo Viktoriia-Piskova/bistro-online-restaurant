@@ -15,6 +15,6 @@ export default {
     return apiClient.get("/dishes");
   },
   getDish(id) {
-    return apiClient.get("/dishes" + id);
+    return apiClient.get("/dishes/" + id);
   },
 };

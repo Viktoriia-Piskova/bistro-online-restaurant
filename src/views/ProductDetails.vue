@@ -1,40 +1,43 @@
 <template>
-  <router-link class="event-link" :to="{ name: 'ProductDetails' }">
-    <div class="product">
-      <div class="product_photo">
-        <img src="@/assets/dishes/d1.png" alt="" />
-      </div>
-      <div class="product_info">
-        <h6>{{ dish.name }}</h6>
-        <p class="product_ingredients">{{ dish.ingredients }}</p>
-        <div class="price">
-          <span class="total-price">${{ dish.price }}</span>
-          <span class="old-price"></span>
-        </div>
-        <button class="add_btn" @click="addToCart">Add to cart</button>
-      </div>
+  <div class="product">
+    <div class="product_photo">
+      <img src="@/assets/dishes/d1.png" alt="" />
     </div>
-  </router-link>
+    <div class="product_info">
+      <h6>{{ dish.name }}</h6>
+      <p class="product_ingredients">{{ dish.ingredients }}</p>
+      <ul class="product_nutrition">
+        <li>Protein 7.5 grams</li>
+        <li>Carbs 37 grams</li>
+        <li>Fiber 6 grams</li>
+        <li>Fat 0.8 grams</li>
+      </ul>
+      <div class="price">
+        <span class="total-price">${{ dish.price }}</span>
+        <span class="old-price"></span>
+      </div>
+      <button class="add_btn" @click="addToCart">Add to cart</button>
+    </div>
+  </div>
 </template>
 
 <script>
+import DishesService from "@/services/DishesService";
 export default {
-  name: "ProductCard",
+  name: "ProductDetails",
   data() {
     return {
-      // name: "Pad Thai Classic",
-      // ingredients:
-      //   "stir-fry dish made with rice noodles, shrimp, chicken, or tofu, peanuts,a scrambled egg and bean sprouts",
-      // price: 50,
-      // discount: 100,
-      //dish: null,
+      dish: null,
+      id: "d02",
     };
   },
-  props: {
-    dish: {
-      type: Object,
-      required: true,
-    },
+  //props: ["id"],
+  created() {
+    DishesService.getDish(this.id)
+      .then((response) => {
+        this.dish = response.data;
+      })
+      .catch((error) => console.log(error));
   },
   methods: {
     addToCart() {
@@ -46,20 +49,26 @@ export default {
 
 <style scoped>
 .product {
-  width: 413px;
   background: #2a2e37;
   border: 2px solid #000000;
   border-radius: 15px;
-  margin: 10px;
+  margin: 80px 20%;
+  display: flex;
+  align-items: center;
 }
 .product_photo {
-  height: 50%;
+  height: auto;
+  width: 50%;
 }
 .product_info {
   height: 50%;
   position: relative;
   padding: 20px;
   padding-bottom: 70px;
+}
+
+.product_nutrition {
+  font-style: italic;
 }
 .product_ingredients {
   font-family: "Roboto";
