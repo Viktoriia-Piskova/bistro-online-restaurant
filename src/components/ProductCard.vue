@@ -44,6 +44,7 @@ export default {
   border: 2px solid #000000;
   border-radius: 15px;
   margin: 10px;
+  padding: 15px;
 }
 .product_photo {
   height: 50%;
@@ -90,6 +91,7 @@ export default {
   width: 120px;
   background: #793ef9;
   border-radius: 5px;
+  margin: 10px;
 }
 .add_btn:hover {
   background: #f000b8;
