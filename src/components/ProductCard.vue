@@ -1,6 +1,6 @@
 <template>
-  <router-link :to="{ name: 'ProductDetails', params: { id: dish.id } }">
-    <div class="product">
+  <div class="product">
+    <router-link :to="{ name: 'ProductDetails', params: { id: dish.id } }">
       <div class="product_photo">
         <img src="@/assets/dishes/d1.png" alt="" />
       </div>
@@ -11,10 +11,10 @@
           <span class="total-price">${{ dish.price }}</span>
           <span class="old-price"></span>
         </div>
-        <button class="add_btn" @click="addToCart">Add to cart</button>
       </div>
-    </div>
-  </router-link>
+    </router-link>
+    <button class="add_btn" @click="addToCart">Add to cart</button>
+  </div>
 </template>
 
 <script>
@@ -49,10 +49,8 @@ export default {
   height: 50%;
 }
 .product_info {
-  height: 50%;
-  position: relative;
+  height: 40%;
   padding: 20px;
-  padding-bottom: 70px;
 }
 .product_ingredients {
   font-family: "Roboto";
@@ -88,12 +86,10 @@ export default {
   color: rgba(209, 213, 219, 0.5);
 }
 .add_btn {
-  height: 48px;
-  width: 90px;
+  height: 50px;
+  width: 120px;
   background: #793ef9;
   border-radius: 5px;
-  position: absolute;
-  right: 20px;
 }
 .add_btn:hover {
   background: #f000b8;

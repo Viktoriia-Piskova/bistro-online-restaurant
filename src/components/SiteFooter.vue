@@ -2,12 +2,14 @@
   <footer>
     <div class="contacts">
       <p>
-        <span>Bistro Chiangmai</span>
-        <br />
-        4/1 Samlarn Road,Amphoe Mueang<br />
+        4/1 Samlarn Road,<br />
         Chiang Mai, Thailand
       </p>
-      <p class="pink"><a href="tel:+11234567890"> ✆ Call +01 1234567890</a></p>
+      <p class="pink">
+        <a href="tel:+11234567890">
+          <span class="icon">✆</span>+01 1234567890</a
+        >
+      </p>
       <p class="pink">
         <a href="mailto:foodOnline@gmail.com"> foodOnline@gmail.com</a>
       </p>
@@ -72,9 +74,11 @@
     </div>
 
     <div class="schedule">
-      <h4>Visit us</h4>
-      <p>daily</p>
-      <p>from 4:00 till 8:00</p>
+      <p>Daily</p>
+      <p>
+        from 4:00 <br />
+        till 8:00
+      </p>
     </div>
   </footer>
 </template>
@@ -111,6 +115,14 @@ footer p {
 .copyright {
   width: 25%;
 }
+
+.copyright p {
+  font-size: 14px;
+}
+
+.schedule p {
+  font-size: 20px;
+}
 .footer-social {
   display: flex;
   align-items: center;
@@ -124,7 +136,9 @@ footer p {
   border-radius: 50%;
   padding: 15px;
 }
-
+.social-circle a {
+  font-size: 0px;
+}
 .social-circle:hover {
   background-color: #f000b8;
 }
@@ -138,5 +152,9 @@ footer p {
 .footer-logo img {
   height: 100px;
   width: auto;
+}
+
+.icon {
+  font-size: 25px;
 }
 </style>
