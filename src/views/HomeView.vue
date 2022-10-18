@@ -12,10 +12,9 @@
         </p>
       </div>
     </section>
-    <!-- <div class="products-wrapper">
-      <ProductCard v-for="dish in dishes" :key="dish.id" :dish="dish" />
-    </div> -->
-
+    <section class="photos">
+      <SliderOnMain />
+    </section>
     <section class="extra">
       <div class="extra-description">
         <h3>Charity food</h3>
@@ -57,7 +56,7 @@
 </template>
 
 <script>
-//import ProductCard from "@/components/ProductCard.vue";
+import SliderOnMain from "@/components/SliderOnMain.vue";
 import MainBanner from "@/components/MainBanner.vue";
 import DishesService from "@/services/DishesService.js";
 export default {
@@ -65,6 +64,7 @@ export default {
   components: {
     //ProductCard,
     MainBanner,
+    SliderOnMain,
   },
   data() {
     return {

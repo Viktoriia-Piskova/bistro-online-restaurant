@@ -9,7 +9,7 @@
     </td>
     <td>{{ order.inCart * order.price }}</td>
     <td>
-      <button class="cart-delete">
+      <button class="cart-delete" @click="deleteFromCart">
         <svg
           fill="#f000b8"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +41,9 @@ export default {
     },
     decreaseDish() {
       this.$store.dispatch("decreaseDish", this.order);
+    },
+    deleteFromCart() {
+      this.$store.dispatch("deleteFromCart", this.order);
     },
   },
 };

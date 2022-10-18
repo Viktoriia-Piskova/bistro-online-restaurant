@@ -26,7 +26,15 @@ export default createStore({
         state.cardCost -= dish.price * dish.inCart;
         state.cardQuantity -= 1;
       } else {
-        dish = false;
+        return;
+      }
+    },
+    DELETE_DISH(state, dish) {
+      const dishIndex = state.cart.indexOf(dish);
+      if (dishIndex > -1) {
+        state.cardQuantity -= dish.inCart;
+        state.cardCost -= dish.price * dish.inCart;
+        state.cart.splice(dishIndex, 1);
       }
     },
     ADD_USER(state, userData) {
@@ -39,10 +47,14 @@ export default createStore({
       commit("ADD_TO_CART", dish);
     },
     deleteFromCart({ commit }, dish) {
-      commit("ADD_TO_CART", dish);
+      commit("DELETE_DISH", dish);
     },
     decreaseDish({ commit }, dish) {
-      commit("DECREASE_DISH", dish);
+      if (dish.inCart > 0) {
+        commit("DECREASE_DISH", dish);
+      } else {
+        commit("DELETE_DISH", dish);
+      }
     },
     addUser({ commit }, userData) {
       commit("ADD_USER", userData);
