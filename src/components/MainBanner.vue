@@ -24,7 +24,7 @@ export default {
 
 .banner-caption {
   position: absolute;
-  top: 50%;
+  top: 27%;
   width: 100%;
   text-align: center;
   z-index: 1;
@@ -36,8 +36,8 @@ export default {
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 700;
-  font-size: 60px;
-  line-height: 80px;
+  font-size: 6vw;
+  line-height: 7vw;
   color: #ffffff;
   width: 40%;
   margin: auto;

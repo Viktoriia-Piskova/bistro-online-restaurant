@@ -104,6 +104,7 @@ export default {
 .extra-image {
   width: 500px;
   height: auto;
+  overflow: hidden;
 }
 .extra-description {
   display: flex;
