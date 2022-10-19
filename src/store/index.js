@@ -10,7 +10,6 @@ export default createStore({
   getters: {},
   mutations: {
     ADD_TO_CART(state, dish) {
-      console.log(dish);
       if (dish.inCart == undefined) {
         dish.inCart = 1;
         state.cart.push(dish);

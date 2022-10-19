@@ -6,9 +6,26 @@
 
     <form @submit.prevent="addUser" class="form account-form" action="#">
       <h3 class="account-header">Create new account</h3>
-      <input v-model="userData.name" type="text" placeholder="Name" />
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
+      <input v-model="userData.name" type="text" placeholder="Name" required />
+      <div class="address">
+        <input
+          v-model="userData.address.street"
+          type="text"
+          placeholder="Street name"
+          required
+        />
+        <input
+          v-model="userData.address.apartment"
+          type="text"
+          placeholder="app.№"
+        />
+      </div>
+      <input
+        v-model="userData.phone"
+        type="tel"
+        placeholder="Phone number"
+        required
+      />
       <button type="submit" class="sign-btn">Sign up</button>
       <p class="account-policy">
         <a href="https://en.wikipedia.org/wiki/Terms_of_service"
@@ -25,9 +42,12 @@ export default {
   data() {
     return {
       userData: {
-        name: "",
-        email: "",
-        password: "",
+        name: null,
+        phone: null,
+        address: {
+          street: "",
+          apartment: "",
+        },
       },
     };
   },

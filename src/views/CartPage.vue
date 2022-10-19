@@ -20,79 +20,51 @@
               :key="order.id"
               :order="order"
             />
-            <!-- <tr v-for="order in orders" :key="order.id">
-              <td>{{ order.name }}</td>
-              <td>{{ order.price }}</td>
-              <td>
-                <button
-                  class="cart-quantity decrease"
-                  @click="decreaseDish(order.id)"
-                >
-                  -
-                </button>
-                {{ order.inCart }}
-                <button
-                  class="cart-quantity increase"
-                  @click="increaseDish(order.id)"
-                >
-                  +
-                </button>
-              </td>
-              <td>{{ order.inCart * order.price }}</td>
-              <td>
-                <button class="cart-delete">
-                  <svg
-                    fill="#f000b8"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 30 30"
-                    width="30px"
-                    height="30px"
-                  >
-                    <path
-                      d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"
-                    />
-                  </svg>
-                </button>
-              </td>
-            </tr> -->
             <tr>
               <td colspan="6">
-                <h6>Total: {{ $store.state.cardCost }}</h6>
+                <h6>Total: ${{ $store.state.cardCost }}</h6>
               </td>
             </tr>
           </table>
         </fieldset>
         <fieldset class="cart-delivery">
-          <legend>Delivery time and address</legend>
-          <div class="select-time">
-            <label>Delivery time: <input type="time" value="13:00" /></label>
-          </div>
-          <div class="cart-address">
-            <label>
-              Street name
-              <input
-                type="text"
-                name="street"
-                id="street"
-                placeholder="Street name"
-                value="Test user name"
-              />
-            </label>
-            <label>
-              Number
-              <input
-                type="text"
-                class="input-small"
-                name="house"
-                placeholder="123a"
-            /></label>
-            <label
-              >Appartment<input
-                type="text"
-                class="input-small"
-                name="apartment"
-                placeholder="456"
-            /></label>
+          <legend>Personal data and address</legend>
+
+          <div class="cart-inputs">
+            <div class="cart-address">
+              <label>
+                Street name
+                <input
+                  type="text"
+                  name="street"
+                  id="street"
+                  placeholder="Street name"
+                  value="Test user name"
+                />
+              </label>
+              <label>
+                Number
+                <input
+                  type="text"
+                  class="input-small"
+                  name="house"
+                  placeholder="123a"
+              /></label>
+              <label
+                >Appartment<input
+                  type="text"
+                  class="input-small"
+                  name="apartment"
+                  placeholder="456"
+              /></label>
+              <!-- <label>Delivery time: <input type="time" value="13:00" /></label> -->
+            </div>
+            <div class="select-time">
+              <h6>Enter data once or save into profile</h6>
+              <button class="donate-btn">
+                <router-link to="/profile">Profile</router-link>
+              </button>
+            </div>
           </div>
         </fieldset>
         <fieldset class="cart-payment">
@@ -130,7 +102,7 @@
 </template>
 
 <script>
-import DishInCart from "@/components/DishInCart.vue";
+import DishInCart from "@/components/CartPage/DishInCart.vue";
 export default {
   name: "CartPage",
   data() {
@@ -159,6 +131,7 @@ export default {
   font-size: 20px;
   font-family: "Roboto";
 }
+
 .cart-items td {
   color: #fff8f8;
   background-color: #c0c0c04a;
@@ -193,6 +166,12 @@ export default {
 .cart-delete:active {
   background-color: rgb(255, 255, 255);
 } */
+
+.cart-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
 .select-time {
   width: 50%;
@@ -272,6 +251,7 @@ select * {
   background-color: rgb(74, 209, 74);
   margin: 20px auto;
 }
+
 legend {
   font-size: 30px;
   font-weight: 300;

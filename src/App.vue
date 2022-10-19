@@ -283,7 +283,6 @@ header nav {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  width: 80%;
   margin: auto;
 }
 
@@ -318,7 +317,6 @@ header {
 .menu {
   display: flex;
   align-items: center;
-  gap: 50px;
 }
 
 .user {
