@@ -6,6 +6,7 @@ export default createStore({
     cardCost: 0,
     cardQuantity: 0,
     userData: {},
+    order: [],
   },
   getters: {},
   mutations: {
