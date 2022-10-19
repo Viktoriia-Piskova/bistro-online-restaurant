@@ -29,8 +29,9 @@
         </fieldset>
         <fieldset class="cart-delivery">
           <legend>Personal data and address</legend>
-
-          <div class="cart-inputs">
+          <CartNonRegisteredUser v-if="!$store.state.userData.name" />
+          <CartRegisteredUser v-if="$store.state.userData.name" />
+          <!-- <div class="cart-inputs">
             <div class="cart-address">
               <label>
                 Street name
@@ -57,7 +58,7 @@
                   name="apartment"
                   placeholder="456"
               /></label>
-              <!-- <label>Delivery time: <input type="time" value="13:00" /></label> -->
+              <label>Delivery time: <input type="time" value="13:00" /></label>
             </div>
             <div class="select-time">
               <h6>Enter data once or save into profile</h6>
@@ -65,7 +66,7 @@
                 <router-link to="/profile">Profile</router-link>
               </button>
             </div>
-          </div>
+          </div> -->
         </fieldset>
         <fieldset class="cart-payment">
           <legend>Payment details</legend>
@@ -103,6 +104,9 @@
 
 <script>
 import DishInCart from "@/components/CartPage/DishInCart.vue";
+import CartNonRegisteredUser from "@/components/CartPage/CartNonRegisteredUser.vue";
+import CartRegisteredUser from "@/components/CartPage/CartRegisteredUser.vue";
+
 export default {
   name: "CartPage",
   data() {
@@ -113,6 +117,8 @@ export default {
   },
   components: {
     DishInCart,
+    CartNonRegisteredUser,
+    CartRegisteredUser,
   },
   created() {
     console.log(this.order);
@@ -167,7 +173,7 @@ export default {
   background-color: rgb(255, 255, 255);
 } */
 
-.cart-inputs {
+/* .cart-inputs {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -179,7 +185,7 @@ export default {
   color: black;
   border: none;
   font-size: 20px;
-}
+}*/
 
 input {
   color: #000;
@@ -253,6 +259,7 @@ select * {
 }
 
 legend {
+  font-family: "Prompt";
   font-size: 30px;
   font-weight: 300;
   color: #adaaad94;

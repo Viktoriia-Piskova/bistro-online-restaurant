@@ -60,7 +60,7 @@ export default {
   background-color: #c0c0c04a;
   padding: 16px;
   width: auto;
-  font-size: 32px;
+  font-size: 25px;
   font-family: "Prompt";
 }
 .cart-quantity,

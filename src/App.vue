@@ -261,7 +261,7 @@ h6 {
 }
 
 p {
-  font-family: "Roboto";
+  font-family: "Prompt";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
