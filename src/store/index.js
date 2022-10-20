@@ -17,13 +17,13 @@ export default createStore({
       } else {
         dish.inCart += 1;
       }
-      state.cardCost += dish.price * dish.inCart;
+      state.cardCost += dish.price;
       state.cardQuantity += 1;
     },
     DECREASE_DISH(state, dish) {
       if (dish.inCart > 0) {
         dish.inCart -= 1;
-        state.cardCost -= dish.price * dish.inCart;
+        state.cardCost -= dish.price;
         state.cardQuantity -= 1;
       } else {
         return;
@@ -32,8 +32,8 @@ export default createStore({
     DELETE_DISH(state, dish) {
       const dishIndex = state.cart.indexOf(dish);
       if (dishIndex > -1) {
-        state.cardQuantity -= dish.inCart;
         state.cardCost -= dish.price * dish.inCart;
+        state.cardQuantity -= dish.inCart;
         state.cart.splice(dishIndex, 1);
       }
     },
