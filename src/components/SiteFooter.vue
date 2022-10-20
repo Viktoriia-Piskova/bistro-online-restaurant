@@ -102,6 +102,12 @@ footer {
   padding: 100px 10%;
 }
 
+@media screen and (max-width: 750px) {
+  footer {
+    flex-wrap: wrap;
+  }
+}
+
 footer p {
   font-family: "Prompt";
   font-style: normal;
@@ -109,15 +115,16 @@ footer p {
   font-size: 16px;
   line-height: 24px;
 }
-.contacts {
+/* .contacts {
   width: 20%;
 }
 .copyright {
   width: 25%;
-}
+} */
 
 .copyright p {
   font-size: 14px;
+  max-width: 500px;
 }
 
 .schedule p {
@@ -146,9 +153,9 @@ footer p {
 .social-circle:hover * {
   fill: #fff;
 }
-.schedule {
+/* .schedule {
   width: 20%;
-}
+} */
 .footer-logo img {
   height: 100px;
   width: auto;

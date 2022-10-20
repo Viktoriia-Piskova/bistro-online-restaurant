@@ -15,7 +15,7 @@
     <section class="photos">
       <SliderOnMain />
     </section>
-    <section class="extra">
+    <!-- <section class="extra">
       <div class="extra-description">
         <h3>Charity food</h3>
         <p>
@@ -51,7 +51,7 @@
         </div>
         <div class="review_author">Moana Michell</div>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 

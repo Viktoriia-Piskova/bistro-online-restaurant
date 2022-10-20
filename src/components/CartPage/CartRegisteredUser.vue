@@ -67,6 +67,7 @@ input {
 }
 .cart-address div {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .input-small {

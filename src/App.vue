@@ -346,6 +346,18 @@ header {
   padding: 50px 0px;
 }
 
+@media only screen and (max-width: 1500px) {
+  .products-wrapper {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .products-wrapper {
+    grid-template-columns: auto;
+  }
+}
+
 .cart-link {
   background-color: #f000b8;
 }

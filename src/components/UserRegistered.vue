@@ -51,11 +51,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .account {
   display: flex;
   align-items: stretch;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .account-decor {
   width: 50%;

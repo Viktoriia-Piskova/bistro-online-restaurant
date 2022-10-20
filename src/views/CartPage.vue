@@ -31,42 +31,6 @@
           <legend>Personal data and address</legend>
           <CartNonRegisteredUser v-if="!$store.state.userData.name" />
           <CartRegisteredUser v-if="$store.state.userData.name" />
-          <!-- <div class="cart-inputs">
-            <div class="cart-address">
-              <label>
-                Street name
-                <input
-                  type="text"
-                  name="street"
-                  id="street"
-                  placeholder="Street name"
-                  value="Test user name"
-                />
-              </label>
-              <label>
-                Number
-                <input
-                  type="text"
-                  class="input-small"
-                  name="house"
-                  placeholder="123a"
-              /></label>
-              <label
-                >Appartment<input
-                  type="text"
-                  class="input-small"
-                  name="apartment"
-                  placeholder="456"
-              /></label>
-              <label>Delivery time: <input type="time" value="13:00" /></label>
-            </div>
-            <div class="select-time">
-              <h6>Enter data once or save into profile</h6>
-              <button class="donate-btn">
-                <router-link to="/profile">Profile</router-link>
-              </button>
-            </div>
-          </div> -->
         </fieldset>
         <fieldset class="cart-payment">
           <legend>Payment details</legend>
@@ -215,15 +179,19 @@ select * {
 
 .g-pay {
   background-color: #000;
-  width: 500px;
-  margin: 10px;
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-wrapper {
   background-color: #414f69;
   border-radius: 20px;
-  height: 287px;
-  width: 500px;
+  max-height: 287px;
+  max-width: 500px;
   margin: auto;
   box-shadow: #1a1818 3px 3px 5px;
   padding: 15px;
@@ -243,11 +211,12 @@ select * {
 
 .cart-confirm {
   height: 50px;
-  width: 500px;
+  max-width: 500px;
   background-color: rgb(15, 95, 15);
   margin: 20px auto;
   padding: 20px;
   display: flex;
+  font-family: "Prompt";
   align-items: center;
   justify-content: center;
 }

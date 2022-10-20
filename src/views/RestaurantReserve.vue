@@ -1,12 +1,11 @@
 <template>
   <h1>Restaurant</h1>
-  <p>
+  <p class="rest-description">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi laborum
     neque sapiente, aliquid mollitia asperiores nisi ex placeat repellat
     corporis non corrupti repellendus laboriosam molestiae accusantium voluptate
     magnam. Velit, similique!
   </p>
-  <p>slider</p>
   <section class="account">
     <div class="account-decor map">
       <!-- <img src="./bistro-online-restaurant/src/assets/signup-decor.jpg" alt=""> -->
@@ -29,21 +28,14 @@
         <input type="date" />
         <input type="time" />
       </div>
-      <div>
-        <table>
-          <tr>
-            <td>
-              <label>1 tb<input type="checkbox" value="1" id="1" /></label>
-            </td>
-          </tr>
-        </table>
-      </div>
       <button class="sign-btn">Reserve</button>
     </form>
   </section>
+  <SliderOnMain />
 </template>
 
 <script>
+import SliderOnMain from "@/components/SliderOnMain.vue";
 export default {
   name: "RestaurantReserve",
   data() {
@@ -54,6 +46,9 @@ export default {
       time: "",
       table: "",
     };
+  },
+  components: {
+    SliderOnMain,
   },
 };
 </script>
@@ -66,8 +61,26 @@ td {
   background-color: #f000b8;
 }
 
+.account {
+  flex-wrap: wrap;
+}
+
+.account-form {
+  min-width: 280px;
+}
+
 .map {
+  min-width: 280px;
   filter: grayscale(70%) invert(1) saturate(0.5) hue-rotate(129deg)
     contrast(0.8);
+}
+
+.rest-description {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.sign-btn {
+  margin: 10px auto;
 }
 </style>

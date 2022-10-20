@@ -39,7 +39,8 @@ export default {
 
 <style scoped>
 .product {
-  width: 413px;
+  max-width: 420px;
+  min-width: 260px;
   background: #2a2e37;
   border: 2px solid #000000;
   border-radius: 15px;
@@ -60,6 +61,7 @@ export default {
   font-size: 20px;
   line-height: 38px;
   text-align: left;
+  height: 220px;
 }
 .price {
   margin: 10px 0px;
