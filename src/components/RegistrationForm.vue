@@ -5,7 +5,7 @@
     </div>
 
     <form @submit.prevent="addUser" class="form account-form" action="#">
-      <h3 class="account-header">Create new account</h3>
+      <h3 class="account-header">Account data</h3>
       <input v-model="userData.name" type="text" placeholder="Name" required />
       <div class="address">
         <input
@@ -17,10 +17,15 @@
         <input
           v-model="userData.address.apartment"
           type="text"
-          placeholder="app.№"
+          placeholder="app №"
         />
       </div>
-      <input v-model="userData.phone" type="tel" required />
+      <input
+        v-model="userData.phone"
+        type="tel"
+        placeholder="099 123 45 67"
+        required
+      />
       <button type="submit" class="sign-btn">Sign up</button>
       <p class="account-policy">
         <a href="https://en.wikipedia.org/wiki/Terms_of_service"
@@ -107,12 +112,20 @@ export default {
   background-color: #e8eae0;
   color: #000;
 }
+.address {
+  width: 100%;
+}
 .sign-btn {
   background: #637a30;
-  box-shadow: 0px 0px 30px rgba(99, 122, 48, 0.4);
+  box-shadow: 0px 0px 30px rgb(99 122 48 / 40%);
   border-radius: 4px;
   width: 100%;
   height: 40px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Prompt";
 }
 .account-policy a {
   color: #2a2e37;
