@@ -111,46 +111,6 @@ export default {
   font-family: "Prompt";
 }
 
-/* .cart-quantity,
-.cart-delete {
-  margin: 5px;
-  width: 40px;
-  height: 40px;
-  background: none;
-  border: none;
-  font-size: 40px;
-  font-weight: 1000;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #f000b8;
-  cursor: pointer;
-}
-
-.cart-quantity:hover,
-.cart-delete:hover {
-  background-color: rgba(255, 255, 255, 0.549);
-}
-
-.cart-quantity:active,
-.cart-delete:active {
-  background-color: rgb(255, 255, 255);
-} */
-
-/* .cart-inputs {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.select-time {
-  width: 50%;
-  padding: 10px;
-  color: black;
-  border: none;
-  font-size: 20px;
-}*/
-
 input {
   color: #000;
   font-size: 20px;

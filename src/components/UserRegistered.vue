@@ -31,23 +31,23 @@
 <script>
 export default {
   name: "UserRegistered",
-  data() {
-    return {
-      userData: {
-        name: null,
-        phone: null,
-        address: {
-          street: "",
-          apartment: "",
-        },
-      },
-    };
-  },
-  methods: {
-    addUser() {
-      this.$store.dispatch("addUser", this.userData);
-    },
-  },
+  // data() {
+  //   return {
+  //     userData: {
+  //       name: null,
+  //       phone: null,
+  //       address: {
+  //         street: "",
+  //         apartment: "",
+  //       },
+  //     },
+  //   };
+  // },
+  // methods: {
+  //   addUser() {
+  //     this.$store.dispatch("addUser", this.userData);
+  //   },
+  // },
 };
 </script>
 
@@ -109,5 +109,14 @@ export default {
 
 .account-policy a {
   color: #2a2e37;
+}
+
+@media only screen and (max-width: 900px) {
+  .account-form {
+    width: 100%;
+  }
+  .account-decor {
+    display: none;
+  }
 }
 </style>

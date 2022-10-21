@@ -20,12 +20,7 @@
           placeholder="app.№"
         />
       </div>
-      <input
-        v-model="userData.phone"
-        type="tel"
-        placeholder="Phone number"
-        required
-      />
+      <input v-model="userData.phone" type="tel" required />
       <button type="submit" class="sign-btn">Sign up</button>
       <p class="account-policy">
         <a href="https://en.wikipedia.org/wiki/Terms_of_service"
@@ -53,13 +48,14 @@ export default {
   },
   methods: {
     addUser() {
+      this.$emit("changeEditable");
       this.$store.dispatch("addUser", this.userData);
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 .account {
   display: flex;
   align-items: stretch;
@@ -120,5 +116,14 @@ export default {
 }
 .account-policy a {
   color: #2a2e37;
+}
+
+@media only screen and (max-width: 900px) {
+  .account-form {
+    width: 100%;
+  }
+  .account-decor {
+    display: none;
+  }
 }
 </style>

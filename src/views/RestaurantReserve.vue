@@ -83,4 +83,13 @@ td {
 .sign-btn {
   margin: 10px auto;
 }
+
+@media only screen and (max-width: 900px) {
+  .account-form {
+    width: 100%;
+  }
+  .account-decor {
+    width: 100%;
+  }
+}
 </style>

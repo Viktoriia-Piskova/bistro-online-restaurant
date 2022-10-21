@@ -356,6 +356,13 @@ header {
   .products-wrapper {
     grid-template-columns: auto;
   }
+  section {
+    margin: auto;
+    padding: 0px;
+  }
+  header {
+    display: none;
+  }
 }
 
 .cart-link {

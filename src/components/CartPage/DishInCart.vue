@@ -2,7 +2,7 @@
   <div class="tr">
     <div class="tr-name">
       <div class="td">{{ order.name }}</div>
-      <div class="td">{{ order.price }}</div>
+      <div class="td">${{ order.price }}</div>
     </div>
 
     <div class="tr-sum">
@@ -15,7 +15,7 @@
           +
         </button>
       </div>
-      <div class="td">{{ order.inCart * order.price }}</div>
+      <div class="td">${{ order.inCart * order.price }}</div>
       <div class="td">
         <button class="cart-delete" @click="deleteFromCart">
           <svg
@@ -63,26 +63,31 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.tr,
 .tr-sum,
 .tr-name {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.tr {
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
 }
-.cart-items table {
+.tr {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: #fff 1px solid;
+}
+
+@media only screen and (max-width: 890px) {
+  .tr {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* .cart-items table {
   width: 100%;
   font-size: 20px;
   font-family: "Roboto";
-}
-.cart-items .td {
+} */
+.td {
   color: #fff8f8;
-  background-color: #c0c0c04a;
   padding: 16px;
   width: auto;
   font-size: 20px;
