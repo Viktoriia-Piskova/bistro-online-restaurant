@@ -224,4 +224,8 @@ label {
   color: #000;
   transition: all 500ms;
 }
+
+.donate-btn {
+  margin: 20px;
+}
 </style>

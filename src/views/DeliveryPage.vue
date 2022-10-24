@@ -1,4 +1,5 @@
 <template>
+  <h1>Welcome to delivery page!</h1>
   <div class="products-wrapper">
     <ProductCard v-for="dish in dishes" :key="dish.id" :dish="dish" />
   </div>

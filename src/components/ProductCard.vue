@@ -2,7 +2,7 @@
   <div class="product">
     <router-link :to="{ name: 'ProductDetails', params: { id: dish.id } }">
       <div class="product_photo">
-        <img src="@/assets/dishes/d1.png" alt="" />
+        <img class="product-img" :src="imgSource" alt="" />
       </div>
       <div class="product_info">
         <h6>{{ dish.name }}</h6>
@@ -22,6 +22,11 @@ export default {
   name: "ProductCard",
   data() {
     return {};
+  },
+  computed: {
+    imgSource() {
+      return require(`../assets/dishes/${this.dish.id}.jpg`);
+    },
   },
   props: {
     dish: {
@@ -47,8 +52,18 @@ export default {
   margin: 10px;
   padding: 15px;
 }
+
+.product:hover {
+  background-color: #222121;
+  border: 2px solid #8a8989;
+}
 .product_photo {
   height: 50%;
+}
+.product-img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
 }
 .product_info {
   height: 40%;

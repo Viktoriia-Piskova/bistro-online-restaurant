@@ -209,6 +209,7 @@ img {
 
 section {
   padding: 100px 10%;
+  min-height: 60vh;
 }
 
 button {
@@ -288,6 +289,7 @@ header nav {
 
 header {
   background: #2a2e37;
+  margin-bottom: 40px;
 }
 
 .menu li {

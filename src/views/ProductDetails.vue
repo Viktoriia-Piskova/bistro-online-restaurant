@@ -1,7 +1,7 @@
 <template>
   <div v-if="dish" class="product">
     <div class="product_photo">
-      <img src="@/assets/dishes/d1.png" alt="" />
+      <img class="product-img" :src="imgSource" alt="" />
     </div>
     <div class="product_info">
       <h6>{{ dish.name }}</h6>
@@ -31,6 +31,11 @@ export default {
       dish: null,
     };
   },
+  computed: {
+    imgSource() {
+      return require(`../assets/dishes/${this.dish.id}.jpg`);
+    },
+  },
   created() {
     console.log(this.dish);
     DishesService.getDish(this.id)
@@ -54,11 +59,30 @@ export default {
   border-radius: 15px;
   margin: 80px 20%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1100px) {
+  .product {
+    margin: 80px 2px;
+  }
+  .add_btn {
+    position: static;
+    right: auto;
+    width: 100%;
+  }
 }
 .product_photo {
   height: auto;
-  width: 50%;
+  width: 100%;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 .product_info {
   height: 50%;
@@ -105,11 +129,8 @@ export default {
 }
 .add_btn {
   height: 48px;
-  width: 90px;
   background: #793ef9;
   border-radius: 5px;
-  position: absolute;
-  right: 20px;
 }
 .add_btn:hover {
   background: #f000b8;
