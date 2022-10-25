@@ -96,6 +96,9 @@ export default {
 </script>
 
 <style scoped>
+.cart {
+  min-height: 60vh;
+}
 .cart-items table {
   width: 100%;
   font-size: 20px;

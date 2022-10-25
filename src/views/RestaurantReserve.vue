@@ -54,6 +54,9 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin-top: 50px;
+}
 .account {
   display: flex;
   align-items: stretch;
