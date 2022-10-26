@@ -38,12 +38,12 @@
         /></label>
       </div>
     </div>
-    <div>
+    <!-- <div>
       <h6>Click to save this data into profile</h6>
       <button class="donate-btn">
         <router-link to="/profile">Save</router-link>
       </button>
-    </div>
+    </div> -->
   </div>
 </template>
 
